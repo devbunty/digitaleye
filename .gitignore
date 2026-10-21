@@ -1,0 +1,13 @@
+venv/
+__pycache__/
+*.pyc
+*.db
+*.sqlite
+*.sqlite3
+
+logs/telemetry/
+*.log
+
+baseline/data/*.json
+
+.vscode/
