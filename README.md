@@ -1,7 +1,7 @@
 
 <div align="center">
 
-# NOVAIRIS
+# digitaleye
 
 ### Next-Generation Open Virtual AI Response & Incident Security Platform
 
@@ -33,7 +33,7 @@ Real-time Endpoint Detection & Response (EDR) platform for behavioral threat det
 
 # Overview
 
-NOVAIRIS is a lightweight Endpoint Detection and Response (EDR) platform developed to demonstrate modern Security Operations Center (SOC) capabilities.
+digitaleye is a lightweight Endpoint Detection and Response (EDR) platform developed to demonstrate modern Security Operations Center (SOC) capabilities.
 
 The platform continuously collects endpoint telemetry, detects behavioral anomalies, generates incidents, correlates findings with the MITRE ATT&CK framework, and provides analysts with an interactive web-based dashboard for monitoring and response.
 
@@ -161,7 +161,7 @@ React SOC Dashboard
 # Project Structure
 
 ```text
-Novairis
+digitaleye
 │
 ├── api/
 ├── collectors/
@@ -238,9 +238,8 @@ POST /heartbeat
 ## Clone Repository
 
 ```bash
-git clone https://github.com/Gkakad2/Novairis.git
-
-cd Novairis
+git clone https://github.com/devbunty/digitaleye
+cd digitaleye
 ```
 
 ---
@@ -314,7 +313,7 @@ http://localhost:5173
 
 # Inspiration
 
-NOVAIRIS draws inspiration from modern Endpoint Detection and Response (EDR) and Security Operations Center (SOC) platforms including:
+digitaleye draws inspiration from modern Endpoint Detection and Response (EDR) and Security Operations Center (SOC) platforms including:
 
 - Microsoft Defender for Endpoint
 - CrowdStrike Falcon
