@@ -1,3 +1,4 @@
+
 <div align="center">
 
 # NOVAIRIS
@@ -328,26 +329,13 @@ This project is developed solely for educational and research purposes and is no
 
 ---
 
-# Author
-
-## Gayatri Kakad
-
-Project Engineer • Cybersecurity • Endpoint Detection & Response • Python • React • Flask • Linux
-
-GitHub
-
-https://github.com/Gkakad2
-
----
-
-# License
-
-This project is licensed under the MIT License.
+#Author 
+devbunty 
 
 ---
 
 <div align="center">
 
-If you found this project useful, consider giving it a ⭐ on GitHub.
+If you found this project useful, consider giving it a ⭐ on GitHub.**
+**
 
-</div>
