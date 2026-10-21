@@ -37,7 +37,7 @@ digitaleye is a lightweight Endpoint Detection and Response (EDR) platform devel
 
 The platform continuously collects endpoint telemetry, detects behavioral anomalies, generates incidents, correlates findings with the MITRE ATT&CK framework, and provides analysts with an interactive web-based dashboard for monitoring and response.
 
-Unlike traditional log viewers, NOVAIRIS focuses on behavioral monitoring, endpoint visibility, incident correlation, and threat intelligence through an intuitive security dashboard.
+Unlike traditional log viewers, digitaleye focuses on behavioral monitoring, endpoint visibility, incident correlation, and threat intelligence through an intuitive security dashboard.
 
 ---
 
