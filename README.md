@@ -29,7 +29,7 @@ Real-time Endpoint Detection & Response (EDR) platform for behavioral threat det
 <img src="docs/screenshots/digitaleye-homepage.png" width="95%">
 =======
 <img src="docs/screenshots/dashboard.png" width="95%">
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 
 </p>
 
