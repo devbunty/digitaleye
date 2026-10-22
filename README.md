@@ -1,13 +1,9 @@
 
 <div align="center">
 
-<<<<<<< HEAD
-# Digital Eye
-=======
 # digitaleye
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 
-### Next-Generation Open Virtual AI Response & Incident Security Platform
+## Next-Generation Open Virtual AI Response & Incident Security Platform
 
 Real-time Endpoint Detection & Response (EDR) platform for behavioral threat detection, endpoint monitoring, incident response, asset management, and Security Operations Center (SOC) visualization.
 
@@ -29,7 +25,7 @@ Real-time Endpoint Detection & Response (EDR) platform for behavioral threat det
 
 <p align="center">
 
-<<<<<<< HEAD
+
 <img src="docs/screenshots/digitaleye-homepage.png" width="95%">
 =======
 <img src="docs/screenshots/dashboard.png" width="95%">
@@ -37,23 +33,20 @@ Real-time Endpoint Detection & Response (EDR) platform for behavioral threat det
 
 </p>
 
----
 
 # Overview
-
-<<<<<<< HEAD
 Digital Eye is a lightweight Endpoint Detection and Response (EDR) platform developed to demonstrate modern Security Operations Center (SOC) capabilities.
 
 The platform continuously collects endpoint telemetry, detects behavioral anomalies, generates incidents, correlates findings with the MITRE ATT&CK framework, and provides analysts with an interactive web-based dashboard for monitoring and response.
 
 Unlike traditional log viewers, Digital Eye focuses on behavioral monitoring, endpoint visibility, incident correlation, and threat intelligence through an intuitive security dashboard.
-=======
+
 digitaleye is a lightweight Endpoint Detection and Response (EDR) platform developed to demonstrate modern Security Operations Center (SOC) capabilities.
 
 The platform continuously collects endpoint telemetry, detects behavioral anomalies, generates incidents, correlates findings with the MITRE ATT&CK framework, and provides analysts with an interactive web-based dashboard for monitoring and response.
 
 Unlike traditional log viewers, digitaleye focuses on behavioral monitoring, endpoint visibility, incident correlation, and threat intelligence through an intuitive security dashboard.
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 
 ---
 
@@ -74,27 +67,27 @@ Unlike traditional log viewers, digitaleye focuses on behavioral monitoring, end
 
 # Screenshots
 
-## Dashboard
+# Dashboard
 
 <p align="center">
-<<<<<<< HEAD
+
 <img src="docs/screenshots/digitaleye-homepage.png" width="90%">
 =======
 <img src="docs/screenshots/Homepage.png" width="90%">
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 </p>
 
 ---
 
-## Assets
+# Assets
 
 <p align="center">
 
-<<<<<<< HEAD
+
 <img src="docs/screenshots/digitaleye-assets.png" width="90%">
 =======
 <img src="docs/screenshots/Assets.png" width="48%">
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 
 </p>
 
@@ -104,7 +97,6 @@ Unlike traditional log viewers, digitaleye focuses on behavioral monitoring, end
 
 <p align="center">
 
-<<<<<<< HEAD
 <img src="docs/screenshots/digitaleye-incidents.png" width="90%">
 =======
 <img src="docs/screenshots/Incidents.png" width="48%">
@@ -114,18 +106,18 @@ Unlike traditional log viewers, digitaleye focuses on behavioral monitoring, end
 
 ---
 
-## Threat Intelligence
+# Threat Intelligence
 
 <p align="center">
 
-<<<<<<< HEAD
+
 <img src="docs/screenshots/digitaleye-threat-intel.png" width="90%">
 
 </p>
 
 ---
 
-## Analytics
+# Analytics
 
 <p align="center">
 
@@ -142,7 +134,6 @@ Unlike traditional log viewers, digitaleye focuses on behavioral monitoring, end
 <img src="docs/screenshots/digitaleye-reports.png" width="90%">
 =======
 <img src="docs/screenshots/Threat-Intel.png" width="48%">
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 
 </p>
 
@@ -152,11 +143,11 @@ Unlike traditional log viewers, digitaleye focuses on behavioral monitoring, end
 
 <p align="center">
 
-<<<<<<< HEAD
+
 <img src="docs/screenshots/digitaleye-settings.png" width="90%">
 =======
 <img src="docs/screenshots/Settings.png" width="90%">
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 
 </p>
 
@@ -166,11 +157,11 @@ Unlike traditional log viewers, digitaleye focuses on behavioral monitoring, end
 
 <p align="center">
 
-<<<<<<< HEAD
+
 <img src="docs/screenshots/digitaleye-light-mode.png" width="90%">
 =======
 <img src="docs/screenshots/Light-mode.png" width="90%">
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 
 </p>
 
@@ -218,7 +209,7 @@ React SOC Dashboard
 
 ---
 
-<<<<<<< HEAD
+
 # Quick Start
 
 **Windows:** double-click `start.bat` (or run `.\start.ps1` in PowerShell).
@@ -242,13 +233,13 @@ The sections below explain each part in detail.
 ---
 
 =======
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 # Project Structure
 
 ```text
 digitaleye
 │
-<<<<<<< HEAD
+
 ├── api/                  Flask app factory and route blueprints
 │   └── routes/
 ├── agent/                Endpoint agent (placeholder)
@@ -304,11 +295,10 @@ GET /dashboard/top-mitre
 GET /assets
 GET /assets/summary
 GET /assets/hosts
-<<<<<<< HEAD
+
 GET /hosts
 POST /hosts/demo
 =======
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 DELETE /hosts/<hostname>
 ```
 
@@ -324,7 +314,7 @@ GET /analytics?hours=72&hostname=<optional>
 ---
 
 =======
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 ## Incidents
 
 ```
@@ -374,20 +364,17 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-<<<<<<< HEAD
+
 python run.py
 =======
 python api/server.py
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 ```
 
 Runs on
-
-```
 http://localhost:5000
 ```
 
-<<<<<<< HEAD
 Settings can be overridden with environment variables:
 `DIGITALEYE_PORT`, `DIGITALEYE_HOST`, `DIGITALEYE_DB` and
 `DIGITALEYE_DEBUG=1` (off by default, because the Werkzeug debugger allows
@@ -401,18 +388,16 @@ python -m pytest
 ```
 
 =======
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 ---
 
 ## Frontend
 
 ```bash
-cd dashboard/frontend
 
-npm install
-
+cd D:\digitaleye-main
+npm run install:dashboard   # first time only
 npm run dev
-```
 
 Runs on
 
@@ -420,13 +405,13 @@ Runs on
 http://localhost:5173
 ```
 
-<<<<<<< HEAD
+
 The dashboard talks to `http://localhost:5000` by default. To use another
 backend, create `dashboard/frontend/.env.local` containing
 `VITE_API_URL=http://<host>:5000`.
 
 =======
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+
 ---
 
 # Current Capabilities
@@ -460,11 +445,9 @@ backend, create `dashboard/frontend/.env.local` containing
 
 # Inspiration
 
-<<<<<<< HEAD
 Digital Eye draws inspiration from modern Endpoint Detection and Response (EDR) and Security Operations Center (SOC) platforms including:
 =======
 digitaleye draws inspiration from modern Endpoint Detection and Response (EDR) and Security Operations Center (SOC) platforms including:
->>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 
 - Microsoft Defender for Endpoint
 - CrowdStrike Falcon
@@ -479,13 +462,14 @@ This project is developed solely for educational and research purposes and is no
 
 ---
 
-#Author 
+#Author
+
 devbunty 
 
 ---
 
 <div align="center">
 
-If you found this project useful, consider giving it a ⭐ on GitHub.**
-**
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
 
