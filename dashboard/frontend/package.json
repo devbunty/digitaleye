@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "digitaleye-dashboard",
+=======
+  "name": "frontend",
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,10 +15,19 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.2",
+<<<<<<< HEAD
+=======
+    "axios": "^1.18.1",
+    "clsx": "^2.1.1",
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
     "framer-motion": "^12.42.2",
     "lucide-react": "^1.23.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
+<<<<<<< HEAD
+=======
+    "react-router-dom": "^7.18.1",
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
     "recharts": "^3.9.2",
     "tailwindcss": "^4.3.2"
   },

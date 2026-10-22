@@ -1,7 +1,12 @@
 import { useState } from "react";
 
+<<<<<<< HEAD
 import { AuthProvider } from "./contexts/AuthProvider";
 import { ThemeProvider } from "./contexts/ThemeProvider";
+=======
+import { AuthProvider } from "./contexts/AuthContext";
+import { ThemeProvider } from "./contexts/ThemeContext";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 import MainLayout from "./layouts/MainLayout";
 import ErrorBoundary from "./components/common/ErrorBoundary";
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """Database engine and session management."""
 
 import logging
@@ -41,3 +42,21 @@ def session_scope() -> Iterator[Session]:
         raise
     finally:
         session.close()
+=======
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+
+DATABASE_URL = "sqlite:///osvf.db"
+
+engine = create_engine(
+    DATABASE_URL,
+    echo=False,
+    future=True
+)
+
+SessionLocal = sessionmaker(
+    bind=engine,
+    autoflush=False,
+    autocommit=False
+)
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15

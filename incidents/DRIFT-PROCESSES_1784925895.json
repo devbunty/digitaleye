@@ -1,6 +1,10 @@
 {
     "timestamp": "2026-07-24T20:44:55.932189+00:00",
+<<<<<<< HEAD
     "hostname": "digitaleye-client",
+=======
+    "hostname": "novairis-client",
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
     "rule_id": "DRIFT-PROCESSES",
     "title": "New Process Detected",
     "severity": "Medium",

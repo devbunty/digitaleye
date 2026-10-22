@@ -11,10 +11,17 @@ import {
   UserCircle2,
 } from "lucide-react";
 
+<<<<<<< HEAD
 import { useAuth } from "../../contexts/authContext";
 import { useTheme } from "../../contexts/themeContext";
 import LoginModal from "../auth/LoginModal";
 import { getThreatFeed } from "../../services/dashboard";
+=======
+import { useAuth } from "../../contexts/AuthContext";
+import { useTheme } from "../../contexts/ThemeContext";
+import LoginModal from "../auth/LoginModal";
+import { getThreatFeed } from "../../services/dashboardService";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 import { formatRelativeTime } from "../../utils/assetHelpers";
 
 const PLACEHOLDERS = {

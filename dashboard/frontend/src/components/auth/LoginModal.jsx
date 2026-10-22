@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Lock, LogIn, X } from "lucide-react";
 
+<<<<<<< HEAD
 import { BRAND } from "../../brand";
 import { useAuth } from "../../contexts/authContext";
+=======
+import { useAuth } from "../../contexts/AuthContext";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 
 export default function LoginModal({ open, onClose }) {
   const { login, demoCredentials } = useAuth();
@@ -28,7 +32,11 @@ export default function LoginModal({ open, onClose }) {
     }
   }
 
+<<<<<<< HEAD
   function fillCredentials(user) {
+=======
+  function useDemo(user) {
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
     setUsername(user.username);
     setPassword(user.password);
     setError("");
@@ -41,7 +49,11 @@ export default function LoginModal({ open, onClose }) {
           <div>
             <h2 className="font-display text-xl font-semibold">Sign in</h2>
             <p className="mt-1 text-sm text-slate-400">
+<<<<<<< HEAD
               Use your {BRAND.name} credentials to access the console.
+=======
+              Use your Novairis credentials to access the console.
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
             </p>
           </div>
           <button
@@ -100,7 +112,11 @@ export default function LoginModal({ open, onClose }) {
               <button
                 key={cred.username}
                 type="button"
+<<<<<<< HEAD
                 onClick={() => fillCredentials(cred)}
+=======
+                onClick={() => useDemo(cred)}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
                 className="flex w-full items-center justify-between rounded-lg border border-white/8 bg-black/20 px-3 py-2 text-left text-sm hover:border-cyan-400/30"
               >
                 <span>

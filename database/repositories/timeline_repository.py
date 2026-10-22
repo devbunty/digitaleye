@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from database.db import session_scope
 from database.models import Incident, Telemetry
 from database.timeutils import to_iso
@@ -6,12 +7,28 @@ from database.timeutils import to_iso
 def get_host_timeline(hostname: str) -> dict:
     """Telemetry samples and incidents for one host, newest first."""
     with session_scope() as session:
+=======
+from database.db import SessionLocal
+from database.models import Telemetry, Incident
+
+
+def get_host_timeline(hostname):
+
+    session = SessionLocal()
+
+    try:
+
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
         telemetry = (
             session.query(Telemetry)
             .filter(Telemetry.hostname == hostname)
             .order_by(Telemetry.collection_time.desc())
             .all()
         )
+<<<<<<< HEAD
+=======
+
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
         incidents = (
             session.query(Incident)
             .filter(Incident.hostname == hostname)
@@ -19,6 +36,7 @@ def get_host_timeline(hostname: str) -> dict:
             .all()
         )
 
+<<<<<<< HEAD
         return {
             "hostname": hostname,
             "telemetry": [
@@ -41,3 +59,10 @@ def get_host_timeline(hostname: str) -> dict:
                 for i in incidents
             ],
         }
+=======
+        return telemetry, incidents
+
+    finally:
+
+        session.close()
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15

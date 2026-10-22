@@ -7,11 +7,16 @@ import {
   FileText,
   Settings,
   ChevronRight,
+<<<<<<< HEAD
   Eye,
 } from "lucide-react";
 
 import { BRAND } from "../../brand";
 
+=======
+} from "lucide-react";
+
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 const menu = [
   {
     name: "Dashboard",
@@ -60,17 +65,30 @@ export default function Sidebar({ page, setPage }) {
         <div className="flex items-center gap-4">
 
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-500 font-display text-lg font-bold text-slate-950 shadow-lg shadow-cyan-500/20">
+<<<<<<< HEAD
             <Eye size={26} strokeWidth={2.4} />
+=======
+            N
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
           </div>
 
           <div>
 
+<<<<<<< HEAD
             <h1 className="font-display text-lg font-semibold tracking-wide text-white">
               {BRAND.name.toUpperCase()}
             </h1>
 
             <p className="text-xs text-slate-500">
               {BRAND.tagline}
+=======
+            <h1 className="font-display text-xl font-semibold tracking-wide text-white">
+              NOVAIRIS
+            </h1>
+
+            <p className="text-xs text-slate-500">
+              Security Intelligence
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
             </p>
 
           </div>

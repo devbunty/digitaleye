@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import { useMemo } from "react";
 
 import { useFetch } from "../../hooks/useFetch";
 import { getThreatFeed } from "../../services/dashboard";
+=======
+import { useEffect, useMemo, useState } from "react";
+
+import { getThreatFeed } from "../../services/dashboardService";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 
 function matchesQuery(threat, query) {
   if (!query) return true;
@@ -14,6 +20,7 @@ function matchesQuery(threat, query) {
   );
 }
 
+<<<<<<< HEAD
 function severityStyle(severity) {
   switch ((severity || "").toLowerCase()) {
     case "critical":
@@ -44,12 +51,57 @@ const NO_THREATS = [];
 export default function LiveThreatFeed({ searchQuery = "", refreshToken = 0 }) {
   const result = useFetch(getThreatFeed, NO_THREATS, refreshToken);
   const threats = Array.isArray(result) ? result : NO_THREATS;
+=======
+export default function LiveThreatFeed({ searchQuery = "", refreshToken = 0 }) {
+  const [threats, setThreats] = useState([]);
+
+  async function loadThreats() {
+    try {
+      const data = await getThreatFeed();
+      setThreats(Array.isArray(data) ? data : []);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    loadThreats();
+  }, [refreshToken]);
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 
   const filtered = useMemo(
     () => threats.filter((t) => matchesQuery(t, searchQuery.trim())),
     [threats, searchQuery]
   );
 
+<<<<<<< HEAD
+=======
+  function severityStyle(severity) {
+    switch ((severity || "").toLowerCase()) {
+      case "critical":
+        return {
+          color: "border-red-500/40 bg-red-500/10",
+          badge: "bg-red-500/20 text-red-400",
+        };
+      case "high":
+        return {
+          color: "border-orange-500/40 bg-orange-500/10",
+          badge: "bg-orange-500/20 text-orange-400",
+        };
+      case "medium":
+        return {
+          color: "border-yellow-500/40 bg-yellow-500/10",
+          badge: "bg-yellow-500/20 text-yellow-400",
+        };
+      default:
+        return {
+          color: "border-cyan-500/40 bg-cyan-500/10",
+          badge: "bg-cyan-500/20 text-cyan-400",
+        };
+    }
+  }
+
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
   return (
     <div className="surface-panel h-full rounded-2xl p-6">
       <div className="mb-6 flex items-center justify-between">

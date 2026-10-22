@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 """Per-host baselines, stored as the last accepted telemetry snapshot."""
 
 import json
@@ -27,3 +28,30 @@ def save_baseline(hostname: str, telemetry: dict) -> None:
     config.BASELINE_DIR.mkdir(parents=True, exist_ok=True)
     with open(_path(hostname), "w", encoding="utf-8") as handle:
         json.dump(telemetry, handle, indent=4)
+=======
+import json
+from pathlib import Path
+
+BASELINE_DIR = Path("baseline/data")
+BASELINE_DIR.mkdir(parents=True, exist_ok=True)
+
+
+def get_file(hostname):
+    return BASELINE_DIR / f"{hostname}.json"
+
+
+def baseline_exists(hostname):
+    return get_file(hostname).exists()
+
+
+def load_baseline(hostname):
+
+    with open(get_file(hostname), "r") as f:
+        return json.load(f)
+
+
+def save_baseline(hostname, telemetry):
+
+    with open(get_file(hostname), "w") as f:
+        json.dump(telemetry, f, indent=4)
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15

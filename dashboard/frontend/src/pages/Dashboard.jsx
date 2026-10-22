@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useCallback, useState } from "react";
+=======
+import { useCallback, useMemo, useState } from "react";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 import {
   Plus,
   Server,
@@ -14,11 +18,18 @@ import HostResourceInventory from "../components/inventory/HostResourceInventory
 import LiveThreatFeed from "../components/threats/LiveThreatFeed";
 import AddHostModal from "../components/common/AddHostModal";
 
+<<<<<<< HEAD
 import { getDashboardSummary } from "../services/dashboard";
 import { useAutoRefresh } from "../hooks/useAutoRefresh";
 import AutoRefreshControl from "../components/common/AutoRefreshControl";
 import { PageHero } from "../components/common/Controls";
 import SearchNotice from "../components/ui/SearchNotice";
+=======
+import { getDashboardSummary } from "../services/dashboardService";
+import { useAutoRefresh } from "../hooks/useAutoRefresh";
+import AutoRefreshControl from "../components/common/AutoRefreshControl";
+import { PageHero } from "../components/common/Controls";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 
 export default function Dashboard({ searchQuery = "" }) {
   const [summary, setSummary] = useState(null);
@@ -44,6 +55,16 @@ export default function Dashboard({ searchQuery = "" }) {
     intervalMs: 10000,
   });
 
+<<<<<<< HEAD
+=======
+  const query = searchQuery.trim().toLowerCase();
+
+  const filteredSummary = useMemo(() => {
+    if (!summary || !query) return summary;
+    return summary;
+  }, [summary, query]);
+
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
   return (
     <>
       <PageHero
@@ -81,39 +102,68 @@ export default function Dashboard({ searchQuery = "" }) {
         />
       )}
 
+<<<<<<< HEAD
       <SearchNotice query={searchQuery}>
         Showing results matching <strong>{searchQuery}</strong> in host inventory and threat feed.
       </SearchNotice>
+=======
+      {query && (
+        <div className="mb-4 rounded-xl border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm text-cyan-200">
+          Showing results matching <strong>{searchQuery}</strong> in host inventory and threat feed.
+        </div>
+      )}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
 
       <div className="grid gap-5 xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1">
         <StatCard
           title="Total Hosts"
+<<<<<<< HEAD
           value={summary ? summary.total_hosts : "..."}
           icon={Server}
           color="text-cyan-300"
           change={
             summary?.online_hosts != null
               ? `${summary.online_hosts} online`
+=======
+          value={filteredSummary ? filteredSummary.total_hosts : "..."}
+          icon={Server}
+          color="text-cyan-300"
+          change={
+            filteredSummary?.online_hosts != null
+              ? `${filteredSummary.online_hosts} online`
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
               : ""
           }
         />
         <StatCard
           title="Security Health"
+<<<<<<< HEAD
           value={summary ? `${summary.security_health}%` : "..."}
+=======
+          value={filteredSummary ? `${filteredSummary.security_health}%` : "..."}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
           icon={ShieldCheck}
           color="text-emerald-300"
           change=""
         />
         <StatCard
           title="Critical Alerts"
+<<<<<<< HEAD
           value={summary ? summary.critical_alerts : "..."}
+=======
+          value={filteredSummary ? filteredSummary.critical_alerts : "..."}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
           icon={TriangleAlert}
           color="text-rose-300"
           change=""
         />
         <StatCard
           title="Open Incidents"
+<<<<<<< HEAD
           value={summary ? summary.open_incidents : "..."}
+=======
+          value={filteredSummary ? filteredSummary.open_incidents : "..."}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
           icon={ShieldAlert}
           color="text-amber-300"
           change=""
