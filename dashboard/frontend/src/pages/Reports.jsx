@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+<<<<<<< HEAD
+import { useState } from "react";
+=======
+import { useEffect, useState } from "react";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import {
   Download,
   FileJson,
@@ -8,6 +16,10 @@ import {
   TrendingUp,
 } from "lucide-react";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import { PageHero } from "../components/common/Controls";
 import ErrorBanner from "../components/ui/ErrorBanner";
 import Metric from "../components/ui/Metric";
@@ -19,6 +31,29 @@ import { getAssets } from "../services/assets";
 import { getDashboardSummary } from "../services/dashboard";
 import { getIncidents } from "../services/incidents";
 import { downloadJson } from "../utils/download";
+<<<<<<< HEAD
+=======
+=======
+import { getAssets } from "../services/assets";
+import { getIncidents } from "../services/incidents";
+import { getDashboardSummary } from "../services/dashboardService";
+import { PageHero } from "../components/common/Controls";
+
+function downloadJson(filename, data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], {
+    type: "application/json",
+  });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
 const REPORTS = [
   {
@@ -33,14 +68,32 @@ const REPORTS = [
     title: "Incident Summary",
     description: "All recorded incidents, open and resolved, across every host.",
     icon: ShieldAlert,
+<<<<<<< HEAD
     fetcher: getIncidents,
+=======
+<<<<<<< HEAD
+    fetcher: getIncidents,
+=======
+    fetcher: () => getIncidents(),
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   },
   {
     id: "analytics",
     title: "Analytics Report",
     description: "Severity, category, MITRE and timeline breakdowns for the last 72h.",
     icon: TrendingUp,
+<<<<<<< HEAD
     fetcher: () => getAnalytics({ hours: 72 }),
+=======
+<<<<<<< HEAD
+    fetcher: () => getAnalytics({ hours: 72 }),
+=======
+    fetcher: () =>
+      fetch("http://192.168.175.195:5000/analytics?hours=72", { cache: "no-store" })
+        .then((r) => r.json()),
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   },
   {
     id: "summary",
@@ -51,6 +104,10 @@ const REPORTS = [
   },
 ];
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 async function loadSnapshot() {
   const [assets, incidents, summary] = await Promise.all([
     getAssets(),
@@ -68,10 +125,44 @@ async function loadSnapshot() {
 
 export default function Reports() {
   const snapshot = useFetch(loadSnapshot, null);
+<<<<<<< HEAD
+=======
+=======
+export default function Reports() {
+  const [snapshot, setSnapshot] = useState(null);
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   const [generating, setGenerating] = useState(null);
   const [error, setError] = useState(null);
   const [history, setHistory] = useState([]);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  useEffect(() => {
+    async function loadSnapshot() {
+      try {
+        const [assets, incidents, summary] = await Promise.all([
+          getAssets(),
+          getIncidents(),
+          getDashboardSummary(),
+        ]);
+        setSnapshot({
+          hosts: assets.length,
+          incidents: incidents.length,
+          open: incidents.filter((i) => i.status === "Open").length,
+          health: summary?.security_health ?? null,
+        });
+      } catch (err) {
+        console.error("Reports snapshot error:", err);
+      }
+    }
+    loadSnapshot();
+  }, []);
+
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   async function generate(report) {
     setGenerating(report.id);
     setError(null);
@@ -79,7 +170,15 @@ export default function Reports() {
     try {
       const data = await report.fetcher();
       const stamp = new Date();
+<<<<<<< HEAD
       const filename = `${BRAND.slug}-${report.id}-${stamp
+=======
+<<<<<<< HEAD
+      const filename = `${BRAND.slug}-${report.id}-${stamp
+=======
+      const filename = `novairis-${report.id}-${stamp
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
         .toISOString()
         .replace(/[:.]/g, "-")}.json`;
 
@@ -116,7 +215,19 @@ export default function Reports() {
         />
       </div>
 
+<<<<<<< HEAD
       <ErrorBanner className="mt-4">{error}</ErrorBanner>
+=======
+<<<<<<< HEAD
+      <ErrorBanner className="mt-4">{error}</ErrorBanner>
+=======
+      {error && (
+        <div className="mt-4 rounded-xl border border-rose-500/30 bg-rose-500/10 p-4 text-rose-300">
+          {error}
+        </div>
+      )}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
       <div className="mt-4 grid grid-cols-1 gap-4 xl:grid-cols-12">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:col-span-8">
@@ -179,3 +290,37 @@ export default function Reports() {
     </>
   );
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+function Metric({ label, value, icon: Icon, accent = "text-white" }) {
+  return (
+    <div className="surface-panel rounded-2xl px-4 py-4">
+      <div className="flex items-center justify-between">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          {label}
+        </p>
+        {Icon && <Icon size={16} className={accent} />}
+      </div>
+      <p className={`metric-value mt-2 text-3xl font-semibold ${accent}`}>
+        {value ?? "..."}
+      </p>
+    </div>
+  );
+}
+
+function Panel({ title, subtitle, className = "", children }) {
+  return (
+    <section className={`surface-panel rounded-2xl p-5 ${className}`}>
+      <div className="mb-3">
+        <h2 className="font-display text-lg font-semibold text-white">{title}</h2>
+        {subtitle && <p className="mt-0.5 text-sm text-slate-500">{subtitle}</p>}
+      </div>
+      {children}
+    </section>
+  );
+}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd

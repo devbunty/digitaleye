@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 import { BRAND } from "../../brand";
 
+=======
+<<<<<<< HEAD
+import { BRAND } from "../../brand";
+
+=======
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 export function FilterSelect({ label, value, onChange, options }) {
   return (
     <label className="inline-flex min-w-[150px] items-center gap-2 rounded-xl border border-white/10 bg-black/25 px-3 py-2 text-sm">
@@ -96,7 +104,15 @@ export function PageHero({ title, subtitle, actions }) {
     <div className="mb-7 flex flex-wrap items-end justify-between gap-4">
       <div>
         <p className="mb-2 text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-400/80">
+<<<<<<< HEAD
           {BRAND.name}
+=======
+<<<<<<< HEAD
+          {BRAND.name}
+=======
+          Novairis
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
         </p>
         <h1 className="font-display text-4xl font-semibold tracking-tight text-white md:text-[2.6rem]">
           {title}

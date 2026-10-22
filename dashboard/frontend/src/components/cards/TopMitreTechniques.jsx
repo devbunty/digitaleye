@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import { useEffect, useState } from "react";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import {
   ResponsiveContainer,
   BarChart,
@@ -8,6 +15,10 @@ import {
   Cell,
 } from "recharts";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import { useFetch } from "../../hooks/useFetch";
 import { getTopMitre } from "../../services/dashboard";
 
@@ -17,6 +28,30 @@ const NO_DATA = [];
 export default function TopMitreTechniques({ refreshToken = 0 }) {
   const result = useFetch(getTopMitre, NO_DATA, refreshToken);
   const data = Array.isArray(result) ? result : NO_DATA;
+<<<<<<< HEAD
+=======
+=======
+import { getTopMitre } from "../../services/threatIntel";
+
+export default function TopMitreTechniques({ refreshToken = 0 }) {
+  const [data, setData] = useState([]);
+
+  async function loadMitre() {
+    try {
+      const result = await getTopMitre();
+      setData(Array.isArray(result) ? result : []);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    loadMitre();
+  }, [refreshToken]);
+
+  const colors = ["#ef4444", "#f97316", "#eab308", "#06b6d4", "#8b5cf6"];
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
   return (
     <div className="surface-panel rounded-2xl p-6">
@@ -67,7 +102,15 @@ export default function TopMitreTechniques({ refreshToken = 0 }) {
                   {data.map((entry, index) => (
                     <Cell
                       key={entry.mitre}
+<<<<<<< HEAD
                       fill={COLORS[index % COLORS.length]}
+=======
+<<<<<<< HEAD
+                      fill={COLORS[index % COLORS.length]}
+=======
+                      fill={colors[index % colors.length]}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
                     />
                   ))}
                 </Bar>

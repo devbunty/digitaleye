@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 import { BRAND } from "../../brand";
 import { downloadJson } from "../../utils/download";
 
+=======
+<<<<<<< HEAD
+import { BRAND } from "../../brand";
+import { downloadJson } from "../../utils/download";
+
+=======
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 export default function QuickActions({ host, setPage }) {
   if (!host) return null;
 
@@ -26,8 +35,27 @@ export default function QuickActions({ host, setPage }) {
     {
       label: "Export asset record",
       hint: "Download JSON snapshot of this endpoint",
+<<<<<<< HEAD
       onClick: () =>
         downloadJson(`${BRAND.slug}-${host.hostname}.json`, host),
+=======
+<<<<<<< HEAD
+      onClick: () =>
+        downloadJson(`${BRAND.slug}-${host.hostname}.json`, host),
+=======
+      onClick: () => {
+        const blob = new Blob([JSON.stringify(host, null, 2)], {
+          type: "application/json",
+        });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `novairis-${host.hostname}.json`;
+        link.click();
+        URL.revokeObjectURL(url);
+      },
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
       enabled: true,
     },
     {

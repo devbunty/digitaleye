@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 import { useCallback, useMemo, useState } from "react";
+=======
+<<<<<<< HEAD
+import { useCallback, useMemo, useState } from "react";
+=======
+import { useCallback, useEffect, useMemo, useState } from "react";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
 import AssetTable from "../components/assets/AssetTable";
 import HostOverview from "../components/assets/HostOverview";
@@ -10,9 +18,18 @@ import { getAssets } from "../services/assets";
 import { getIncidents } from "../services/incidents";
 import { useAutoRefresh } from "../hooks/useAutoRefresh";
 import AutoRefreshControl from "../components/common/AutoRefreshControl";
+<<<<<<< HEAD
 import ErrorBanner from "../components/ui/ErrorBanner";
 import Metric from "../components/ui/Metric";
 import SearchNotice from "../components/ui/SearchNotice";
+=======
+<<<<<<< HEAD
+import ErrorBanner from "../components/ui/ErrorBanner";
+import Metric from "../components/ui/Metric";
+import SearchNotice from "../components/ui/SearchNotice";
+=======
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import {
   ControlBar,
   FilterSelect,
@@ -24,7 +41,15 @@ import { computePosture } from "../utils/assetHelpers";
 export default function Assets({ searchQuery = "", setPage }) {
   const [assets, setAssets] = useState([]);
   const [incidents, setIncidents] = useState([]);
+<<<<<<< HEAD
   const [selectedHostname, setSelectedHostname] = useState(null);
+=======
+<<<<<<< HEAD
+  const [selectedHostname, setSelectedHostname] = useState(null);
+=======
+  const [selectedHost, setSelectedHost] = useState(null);
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   const [statusFilter, setStatusFilter] = useState("All");
   const [osFilter, setOsFilter] = useState("All");
   const [sortBy, setSortBy] = useState("hostname");
@@ -135,18 +160,50 @@ export default function Assets({ searchQuery = "", setPage }) {
     return data;
   }, [enrichedAssets, searchQuery, statusFilter, osFilter, sortBy]);
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   // Derived from the latest data, so the detail view stays fresh and closes
   // by itself when the host leaves the filtered list.
   const selectedHost =
     filteredAssets.find((h) => h.hostname === selectedHostname) ?? null;
+<<<<<<< HEAD
+=======
+=======
+  useEffect(() => {
+    if (!selectedHost) return;
+    const fresh = filteredAssets.find(
+      (h) => h.hostname === selectedHost.hostname
+    );
+    if (!fresh) setSelectedHost(null);
+    else if (fresh !== selectedHost) setSelectedHost(fresh);
+  }, [filteredAssets, selectedHost]);
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
   const onlineHosts = assets.filter((h) => h.status === "Online").length;
   const offlineHosts = assets.length - onlineHosts;
   const withAlerts = enrichedAssets.filter((h) => h.open_alerts > 0).length;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   const countOs = (name) =>
     assets.filter((h) => (h.os || "").toLowerCase().includes(name)).length;
   const linuxHosts = countOs("linux");
   const windowsHosts = countOs("windows");
+<<<<<<< HEAD
+=======
+=======
+  const linuxHosts = assets.filter((h) =>
+    (h.os || "").toLowerCase().includes("linux")
+  ).length;
+  const windowsHosts = assets.filter((h) =>
+    (h.os || "").toLowerCase().includes("windows")
+  ).length;
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   const avgProcesses = assets.length
     ? Math.round(
         assets.reduce((s, h) => s + (h.processes || 0), 0) / assets.length
@@ -175,6 +232,10 @@ export default function Assets({ searchQuery = "", setPage }) {
         }
       />
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
       <SearchNotice query={searchQuery}>
         Showing assets matching <strong>{searchQuery}</strong>
       </SearchNotice>
@@ -186,6 +247,24 @@ export default function Assets({ searchQuery = "", setPage }) {
         <Metric size="sm" label="With open alerts" value={withAlerts} accent="text-amber-300" />
         <Metric size="sm" label="Linux / Windows" value={`${linuxHosts} / ${windowsHosts}`} />
         <Metric size="sm" label="Avg process inventory" value={avgProcesses} accent="text-cyan-300" />
+<<<<<<< HEAD
+=======
+=======
+      {searchQuery.trim() && (
+        <div className="mb-4 rounded-xl border border-cyan-400/20 bg-cyan-400/5 px-4 py-2 text-sm text-cyan-200">
+          Showing assets matching <strong>{searchQuery}</strong>
+        </div>
+      )}
+
+      <div className="mb-5 grid grid-cols-2 gap-3 md:grid-cols-3 xl:grid-cols-6">
+        <MiniStat label="Endpoints" value={assets.length} />
+        <MiniStat label="Agents online" value={onlineHosts} accent="text-emerald-300" />
+        <MiniStat label="Unreachable" value={offlineHosts} accent="text-rose-300" />
+        <MiniStat label="With open alerts" value={withAlerts} accent="text-amber-300" />
+        <MiniStat label="Linux / Windows" value={`${linuxHosts} / ${windowsHosts}`} />
+        <MiniStat label="Avg process inventory" value={avgProcesses} accent="text-cyan-300" />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
       </div>
 
       <ControlBar>
@@ -227,12 +306,32 @@ export default function Assets({ searchQuery = "", setPage }) {
         </div>
       </ControlBar>
 
+<<<<<<< HEAD
       <ErrorBanner>{error}</ErrorBanner>
+=======
+<<<<<<< HEAD
+      <ErrorBanner>{error}</ErrorBanner>
+=======
+      {error && (
+        <div className="mb-4 rounded-2xl border border-rose-500/30 bg-rose-500/10 px-4 py-3 text-rose-300">
+          {error}
+        </div>
+      )}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
       <AssetTable
         assets={filteredAssets}
         selectedHost={selectedHost}
+<<<<<<< HEAD
         setSelectedHost={(host) => setSelectedHostname(host?.hostname ?? null)}
+=======
+<<<<<<< HEAD
+        setSelectedHost={(host) => setSelectedHostname(host?.hostname ?? null)}
+=======
+        setSelectedHost={setSelectedHost}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
       />
 
       {selectedHost ? (
@@ -261,3 +360,22 @@ export default function Assets({ searchQuery = "", setPage }) {
     </>
   );
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+function MiniStat({ label, value, accent = "text-white" }) {
+  return (
+    <div className="surface-panel rounded-2xl px-4 py-3.5">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+        {label}
+      </p>
+      <p className={`metric-value mt-1.5 text-2xl font-semibold ${accent}`}>
+        {value}
+      </p>
+    </div>
+  );
+}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd

@@ -16,6 +16,10 @@ import {
   YAxis,
 } from "recharts";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import EmptyChart from "../components/ui/EmptyChart";
 import Metric from "../components/ui/Metric";
 import Panel from "../components/ui/Panel";
@@ -24,6 +28,11 @@ import {
   STATUS_COLORS,
   TOOLTIP_STYLE,
 } from "../constants/severity";
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import { getAnalytics } from "../services/analytics";
 import { useAutoRefresh } from "../hooks/useAutoRefresh";
 import AutoRefreshControl from "../components/common/AutoRefreshControl";
@@ -35,6 +44,31 @@ import {
   SortSelect,
 } from "../components/common/Controls";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+const SEVERITY_COLORS = {
+  Critical: "#fb7185",
+  High: "#fbbf24",
+  Medium: "#fde047",
+  Low: "#94a3b8",
+};
+
+const STATUS_COLORS = {
+  Open: "#fbbf24",
+  Resolved: "#34d399",
+};
+
+const TOOLTIP = {
+  background: "#0b1220",
+  border: "1px solid #1e293b",
+  borderRadius: 12,
+  color: "#e2e8f0",
+};
+
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 const RANGES = [
   { label: "24h", hours: 24 },
   { label: "72h", hours: 72 },
@@ -185,10 +219,23 @@ export default function Analytics() {
           value={summary.total_incidents}
           hint={`${hours}h window`}
         />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
         <Metric placeholder={0} label="Open" value={summary.open} accent="text-amber-300" hint={`${openRate}% open`} />
         <Metric placeholder={0} label="Resolved" value={summary.resolved} accent="text-emerald-300" />
         <Metric placeholder={0} label="Critical" value={summary.critical} accent="text-rose-300" />
         <Metric placeholder={0} label="High" value={summary.high} accent="text-amber-200" />
+<<<<<<< HEAD
+=======
+=======
+        <Metric label="Open" value={summary.open} accent="text-amber-300" hint={`${openRate}% open`} />
+        <Metric label="Resolved" value={summary.resolved} accent="text-emerald-300" />
+        <Metric label="Critical" value={summary.critical} accent="text-rose-300" />
+        <Metric label="High" value={summary.high} accent="text-amber-200" />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
         <Metric
           label={hostname === "All" ? "Hosts hit" : "Scoped"}
           value={hostname === "All" ? summary.affected_hosts : hostname}
@@ -213,7 +260,15 @@ export default function Analytics() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
                   <XAxis dataKey="label" stroke="#64748b" tick={{ fontSize: 11 }} minTickGap={36} />
                   <YAxis stroke="#64748b" allowDecimals={false} width={36} />
+<<<<<<< HEAD
                   <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+<<<<<<< HEAD
+                  <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+                  <Tooltip contentStyle={TOOLTIP} />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
                   <Area type="monotone" dataKey="total" stroke="#22d3ee" fill="url(#nvFill)" strokeWidth={2} name="Total" />
                   <Area type="monotone" dataKey="critical" stroke="#fb7185" fill="transparent" strokeWidth={1.5} name="Critical" />
                 </AreaChart>
@@ -243,7 +298,15 @@ export default function Analytics() {
                       <Cell key={entry.name} fill={SEVERITY_COLORS[entry.name] || "#38bdf8"} />
                     ))}
                   </Pie>
+<<<<<<< HEAD
                   <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+<<<<<<< HEAD
+                  <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+                  <Tooltip contentStyle={TOOLTIP} />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
                 </PieChart>
               </ResponsiveContainer>
             ) : (
@@ -274,7 +337,15 @@ export default function Analytics() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
                   <XAxis dataKey="name" stroke="#64748b" />
                   <YAxis stroke="#64748b" allowDecimals={false} width={32} />
+<<<<<<< HEAD
                   <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+<<<<<<< HEAD
+                  <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+                  <Tooltip contentStyle={TOOLTIP} />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
                   <Bar dataKey="count" radius={[8, 8, 0, 0]}>
                     {data.by_status.map((entry) => (
                       <Cell key={entry.name} fill={STATUS_COLORS[entry.name] || "#38bdf8"} />
@@ -296,7 +367,15 @@ export default function Analytics() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
                   <XAxis dataKey="name" stroke="#64748b" tick={{ fontSize: 11 }} interval={0} angle={-15} textAnchor="end" height={50} />
                   <YAxis stroke="#64748b" allowDecimals={false} width={32} />
+<<<<<<< HEAD
                   <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+<<<<<<< HEAD
+                  <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+                  <Tooltip contentStyle={TOOLTIP} />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
                   <Bar dataKey="count" fill="#22d3ee" radius={[8, 8, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
@@ -318,7 +397,15 @@ export default function Analytics() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
                   <XAxis type="number" stroke="#64748b" allowDecimals={false} />
                   <YAxis type="category" dataKey="name" stroke="#64748b" width={100} tick={{ fontSize: 12 }} />
+<<<<<<< HEAD
                   <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+<<<<<<< HEAD
+                  <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+                  <Tooltip contentStyle={TOOLTIP} />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
                   <Bar dataKey="count" fill="#67e8f9" radius={[0, 8, 8, 0]} />
                 </BarChart>
               </ResponsiveContainer>
@@ -336,7 +423,15 @@ export default function Analytics() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
                   <XAxis dataKey="label" stroke="#64748b" tick={{ fontSize: 11 }} minTickGap={32} />
                   <YAxis stroke="#64748b" domain={[0, 100]} unit="%" width={40} />
+<<<<<<< HEAD
                   <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+<<<<<<< HEAD
+                  <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+                  <Tooltip contentStyle={TOOLTIP} />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
                   <Line type="monotone" dataKey="cpu" stroke="#22d3ee" strokeWidth={2} dot={false} name="CPU %" />
                   <Line type="monotone" dataKey="memory" stroke="#34d399" strokeWidth={2} dot={false} name="Memory %" />
                 </LineChart>
@@ -355,7 +450,15 @@ export default function Analytics() {
                   <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
                   <XAxis type="number" stroke="#64748b" allowDecimals={false} />
                   <YAxis type="category" dataKey="name" stroke="#64748b" width={120} tick={{ fontSize: 12 }} />
+<<<<<<< HEAD
                   <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+<<<<<<< HEAD
+                  <Tooltip contentStyle={TOOLTIP_STYLE} />
+=======
+                  <Tooltip contentStyle={TOOLTIP} />
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
                   <Bar dataKey="count" fill="#38bdf8" radius={[0, 8, 8, 0]} />
                 </BarChart>
               </ResponsiveContainer>
@@ -366,3 +469,48 @@ export default function Analytics() {
     </>
   );
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+function Metric({ label, value, accent = "text-white", hint, compact = false }) {
+  return (
+    <div className="surface-panel rounded-2xl px-4 py-4">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+        {label}
+      </p>
+      <p
+        className={`metric-value mt-2 font-semibold ${accent} ${
+          compact ? "truncate text-lg" : "text-3xl"
+        }`}
+        title={String(value)}
+      >
+        {value ?? 0}
+      </p>
+      {hint && <p className="mt-1 text-xs text-slate-500">{hint}</p>}
+    </div>
+  );
+}
+
+function Panel({ title, subtitle, className = "", children }) {
+  return (
+    <section className={`surface-panel rounded-2xl p-5 ${className}`}>
+      <div className="mb-3">
+        <h2 className="font-display text-lg font-semibold text-white">{title}</h2>
+        {subtitle && <p className="mt-0.5 text-sm text-slate-500">{subtitle}</p>}
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function EmptyChart({ text }) {
+  return (
+    <div className="flex h-full items-center justify-center rounded-xl border border-dashed border-white/10 text-sm text-slate-500">
+      {text}
+    </div>
+  );
+}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd

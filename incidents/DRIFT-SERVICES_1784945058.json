@@ -1,0 +1,14 @@
+{
+    "timestamp": "2026-07-25T02:04:18.654114+00:00",
+<<<<<<< HEAD
+    "hostname": "digitaleye-client",
+=======
+    "hostname": "novairis-client",
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+    "rule_id": "DRIFT-SERVICES",
+    "title": "New Service",
+    "severity": "High",
+    "mitre": "Behavioral",
+    "category": "services",
+    "evidence": "systemd-timedated.service"
+}

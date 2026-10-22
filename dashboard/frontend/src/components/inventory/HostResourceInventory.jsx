@@ -1,7 +1,19 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import { useMemo } from "react";
 
 import { useFetch } from "../../hooks/useFetch";
 import { getHostResources } from "../../services/dashboard";
+<<<<<<< HEAD
+=======
+=======
+import { useEffect, useMemo, useState } from "react";
+
+import { getHostResources } from "../../services/dashboardService";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
 function matchesQuery(host, query) {
   if (!query) return true;
@@ -13,14 +25,44 @@ function matchesQuery(host, query) {
   );
 }
 
+<<<<<<< HEAD
 const NO_HOSTS = [];
 
+=======
+<<<<<<< HEAD
+const NO_HOSTS = [];
+
+=======
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 export default function HostResourceInventory({
   searchQuery = "",
   refreshToken = 0,
 }) {
+<<<<<<< HEAD
   const result = useFetch(getHostResources, NO_HOSTS, refreshToken);
   const hosts = Array.isArray(result) ? result : NO_HOSTS;
+=======
+<<<<<<< HEAD
+  const result = useFetch(getHostResources, NO_HOSTS, refreshToken);
+  const hosts = Array.isArray(result) ? result : NO_HOSTS;
+=======
+  const [hosts, setHosts] = useState([]);
+
+  async function loadInventory() {
+    try {
+      const data = await getHostResources();
+      setHosts(Array.isArray(data) ? data : []);
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  useEffect(() => {
+    loadInventory();
+  }, [refreshToken]);
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
   const filteredHosts = useMemo(
     () => hosts.filter((host) => matchesQuery(host, searchQuery.trim())),

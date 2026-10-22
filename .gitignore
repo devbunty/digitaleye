@@ -1,8 +1,17 @@
 venv/
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 .venv/
 node_modules/
 dist/
 .env.local
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 __pycache__/
 *.pyc
 *.db

@@ -1,0 +1,14 @@
+{
+    "timestamp": "2026-07-25T09:53:33.119384+00:00",
+<<<<<<< HEAD
+    "hostname": "digitaleye-client",
+=======
+    "hostname": "novairis-client",
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+    "rule_id": "DRIFT-PROCESSES",
+    "title": "New Process Detected",
+    "severity": "Medium",
+    "mitre": "Behavioral",
+    "category": "processes",
+    "evidence": "/bin/sh /usr/lib/apt/apt.systemd.daily lock_is_held update"
+}

@@ -7,11 +7,22 @@ import {
   FileText,
   Settings,
   ChevronRight,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   Eye,
 } from "lucide-react";
 
 import { BRAND } from "../../brand";
 
+<<<<<<< HEAD
+=======
+=======
+} from "lucide-react";
+
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 const menu = [
   {
     name: "Dashboard",
@@ -60,17 +71,40 @@ export default function Sidebar({ page, setPage }) {
         <div className="flex items-center gap-4">
 
           <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-500 font-display text-lg font-bold text-slate-950 shadow-lg shadow-cyan-500/20">
+<<<<<<< HEAD
             <Eye size={26} strokeWidth={2.4} />
+=======
+<<<<<<< HEAD
+            <Eye size={26} strokeWidth={2.4} />
+=======
+            N
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
           </div>
 
           <div>
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
             <h1 className="font-display text-lg font-semibold tracking-wide text-white">
               {BRAND.name.toUpperCase()}
             </h1>
 
             <p className="text-xs text-slate-500">
               {BRAND.tagline}
+<<<<<<< HEAD
+=======
+=======
+            <h1 className="font-display text-xl font-semibold tracking-wide text-white">
+              NOVAIRIS
+            </h1>
+
+            <p className="text-xs text-slate-500">
+              Security Intelligence
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
             </p>
 
           </div>

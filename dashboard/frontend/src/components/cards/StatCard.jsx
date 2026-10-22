@@ -1,4 +1,11 @@
 import { motion } from "framer-motion";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+import Card from "../ui/Card";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import { ArrowUpRight } from "lucide-react";
 
 export default function StatCard({
@@ -14,7 +21,15 @@ export default function StatCard({
       transition={{ duration: 0.25 }}
       className="h-full"
     >
+<<<<<<< HEAD
       <div className="group relative h-full overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-slate-500 hover:shadow-cyan-500/10">
+=======
+<<<<<<< HEAD
+      <div className="group relative h-full overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-900/70 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-slate-500 hover:shadow-cyan-500/10">
+=======
+      <Card className="relative overflow-hidden h-full p-6 group border-slate-700/80 hover:border-slate-500">
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 
         {/* Background Glow */}
         <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-white/5 blur-3xl transition-all duration-500 group-hover:bg-white/10" />
@@ -94,7 +109,15 @@ export default function StatCard({
         </div>
 
 
+<<<<<<< HEAD
       </div>
+=======
+<<<<<<< HEAD
+      </div>
+=======
+      </Card>
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
     </motion.div>
   );
 }

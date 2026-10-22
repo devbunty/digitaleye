@@ -9,6 +9,10 @@ import {
   WifiOff,
 } from "lucide-react";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import AutoRefreshControl from "../components/common/AutoRefreshControl";
 import { PageHero } from "../components/common/Controls";
 import Metric from "../components/ui/Metric";
@@ -19,13 +23,57 @@ import { API_URL, getApiInfo } from "../services/system";
 
 export default function Settings() {
   const [health, setHealth] = useState(null);
+<<<<<<< HEAD
+=======
+=======
+import { getHosts, deleteHost } from "../services/hosts";
+import { useAutoRefresh } from "../hooks/useAutoRefresh";
+import AutoRefreshControl from "../components/common/AutoRefreshControl";
+import { PageHero } from "../components/common/Controls";
+
+const API_URL = "http://192.168.175.195:5000";
+const ONLINE_THRESHOLD_MS = 120 * 1000;
+
+// Demo hosts aren't backed by a real agent, so their last_seen timestamp
+// is set once at creation and never refreshed — a pure time-since check
+// would show them as "Offline" within minutes even though they're meant
+// to represent an active fleet member. Match the backend's rule: demo
+// hosts always read as online.
+function isOnline(host) {
+  if (host.is_demo) return true;
+  if (!host.last_seen) return false;
+  return Date.now() - new Date(host.last_seen).getTime() <= ONLINE_THRESHOLD_MS;
+}
+
+export default function Settings() {
+  const [health, setHealth] = useState(null);
+  const [healthOk, setHealthOk] = useState(false);
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   const [hosts, setHosts] = useState([]);
 
   const [deletingHost, setDeletingHost] = useState(null);
 
   const loader = useCallback(async () => {
     const [healthRes, hostRows] = await Promise.all([
+<<<<<<< HEAD
       getApiInfo().catch(() => null),
+=======
+<<<<<<< HEAD
+      getApiInfo().catch(() => null),
+=======
+      fetch(`${API_URL}/`, { cache: "no-store" })
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error("bad status"))))
+        .then((data) => {
+          setHealthOk(true);
+          return data;
+        })
+        .catch(() => {
+          setHealthOk(false);
+          return null;
+        }),
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
       getHosts(),
     ]);
     setHealth(healthRes);
@@ -57,8 +105,17 @@ export default function Settings() {
     }
   }
 
+<<<<<<< HEAD
   const healthOk = health !== null;
   const onlineCount = hosts.filter((h) => h.status === "Online").length;
+=======
+<<<<<<< HEAD
+  const healthOk = health !== null;
+  const onlineCount = hosts.filter((h) => h.status === "Online").length;
+=======
+  const onlineCount = hosts.filter((h) => isOnline(h)).length;
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
   const demoHosts = hosts.filter((h) => h.is_demo);
 
   return (
@@ -195,3 +252,40 @@ function Row({ label, value, accent = "text-white" }) {
     </div>
   );
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+function Metric({ label, value, icon: Icon, accent = "text-white" }) {
+  return (
+    <div className="surface-panel rounded-2xl px-4 py-4">
+      <div className="flex items-center justify-between">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
+          {label}
+        </p>
+        {Icon && <Icon size={16} className={accent} />}
+      </div>
+      <p className={`metric-value mt-2 text-3xl font-semibold ${accent}`}>
+        {value ?? "..."}
+      </p>
+    </div>
+  );
+}
+
+function Panel({ title, subtitle, actions, className = "", children }) {
+  return (
+    <section className={`surface-panel rounded-2xl p-5 ${className}`}>
+      <div className="mb-3 flex items-start justify-between gap-3">
+        <div>
+          <h2 className="font-display text-lg font-semibold text-white">{title}</h2>
+          {subtitle && <p className="mt-0.5 text-sm text-slate-500">{subtitle}</p>}
+        </div>
+        {actions}
+      </div>
+      {children}
+    </section>
+  );
+}
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd

@@ -11,10 +11,23 @@ import {
   UserCircle2,
 } from "lucide-react";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import { useAuth } from "../../contexts/authContext";
 import { useTheme } from "../../contexts/themeContext";
 import LoginModal from "../auth/LoginModal";
 import { getThreatFeed } from "../../services/dashboard";
+<<<<<<< HEAD
+=======
+=======
+import { useAuth } from "../../contexts/AuthContext";
+import { useTheme } from "../../contexts/ThemeContext";
+import LoginModal from "../auth/LoginModal";
+import { getThreatFeed } from "../../services/dashboardService";
+>>>>>>> b7a3db521b7d140ae55a4dc93167ac6b9f9b2e15
+>>>>>>> a4a6984d66345eef2f7dd334c11aef9ee67fdefd
 import { formatRelativeTime } from "../../utils/assetHelpers";
 
 const PLACEHOLDERS = {
