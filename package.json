@@ -1,0 +1,11 @@
+{
+  "name": "digitaleye",
+  "private": true,
+  "description": "Convenience scripts so the dashboard can be started from the project root. The React app itself lives in dashboard/frontend.",
+  "scripts": {
+    "install:dashboard": "npm --prefix dashboard/frontend install",
+    "dev": "npm --prefix dashboard/frontend run dev",
+    "build": "npm --prefix dashboard/frontend run build",
+    "lint": "npm --prefix dashboard/frontend run lint"
+  }
+}
