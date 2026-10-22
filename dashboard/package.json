@@ -1,0 +1,11 @@
+{
+  "name": "digitaleye-dashboard-launcher",
+  "private": true,
+  "description": "Forwards npm scripts to ./frontend, so `npm run dev` also works from the dashboard folder.",
+  "scripts": {
+    "install:dashboard": "npm --prefix frontend install",
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint"
+  }
+}
